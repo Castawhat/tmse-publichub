@@ -1,0 +1,142 @@
+body {
+  font-family: 'ABeeZee', sans-serif;
+  background: #1a1a1a url('https://upload.wikimedia.org/wikipedia/commons/3/3a/Red_texture_background.jpg') center/cover fixed;
+  color: white;
+  margin: 0;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Footer stays at bottom */
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 1em;
+  border-bottom: 4px solid red;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* stack sections vertically */
+  justify-content: center; /* center content vertically */
+  align-items: center;     /* center horizontally */
+  gap: 4em;                /* space between sections */
+  padding: 2em;
+}
+
+section {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+
+.task-button {
+  background-color: red;
+  color: white;
+  font-size: 1.2rem;
+  padding: 1em 1.5em;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  min-width: 150px;
+}
+
+.task-button:hover {
+  background-color: darkred;
+  transform: scale(1.05);
+}
+
+footer {
+  font-size: 0.8rem;
+  color: #ccc;
+  background-color: rgba(0,0,0,0.85);
+  padding: 0.5em;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .task-button {
+    font-size: 1rem;
+    padding: 0.8em 1.2em;
+    min-width: 120px;
+  }
+
+  main {
+    padding: 2em 0;
+    gap: 0.8em;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5em;
+}
+
+.buttons-container .task-button {
+  flex: 1 1 200px;
+  max-width: 220px;
+}
+.soundboard-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.soundboard-buttons .task-button {
+  background-color: red;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+
+  /* rectangular instead of square */
+  padding: 1em 1.5em;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+/* --- Force at least 2 columns on small screens --- */
+@media (max-width: 600px) {
+  .soundboard-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- 3 columns on tablets --- */
+@media (min-width: 601px) and (max-width: 900px) {
+  .soundboard-buttons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- 4+ columns on desktop --- */
+@media (min-width: 901px) {
+  .soundboard-buttons {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+
